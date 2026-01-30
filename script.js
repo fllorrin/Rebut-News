@@ -1,7 +1,13 @@
-console.log("Journal chargé");
+console.log("Script chargé — navigation mobile activée");
 
-// Tu pourras ajouter ici :
-// - un flipbook HTML
-// - navigation entre pages
-// - animations
-// - effets de survol
+// Mobile navigation toggle
+const navToggle = document.querySelector('.nav-toggle');
+const navList = document.getElementById('nav-menu');
+if(navToggle && navList){
+  navToggle.addEventListener('click', ()=>{
+    const isOpen = navList.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+}
+
+// Ajoutez ici d'autres interactions si besoin (lazy-loading, animations, etc.)

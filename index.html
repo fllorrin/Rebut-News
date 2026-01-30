@@ -8,29 +8,118 @@
 </head>
 <body>
 
-<header class="header home-header">
-    <h1 class="title">REBUT‑SUR‑MER</h1>
-    <p class="edition">Ville portuaire – Région de Cobblemon</p>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <a href="#top" class="logo">REBUT‑SUR‑MER</a>
+      <p class="edition">Meilleure ville de Lunaris</p>
+    </div>
+
+    <nav class="site-nav" aria-label="Navigation principale">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+      <ul id="nav-menu" class="nav-list">
+        <li><a href="#actualites">Actualités</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#decouvrir">Découvrir</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="journal.html" class="btn small">Journal</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-<main class="home-container">
-
-    <section class="home-intro">
-        <h2>Bienvenue à Rebut‑Sur‑Mer</h2>
-        <p>
-            Petite ville portuaire battue par les vents, Rebut‑Sur‑Mer accueille voyageurs,
-            pêcheurs, dresseurs et curieux. Entre son port animé, ses ruelles étroites
-            et son journal local, la ville vit au rythme des vagues… et des Cobblemons.
-        </p>
-
-        <div class="home-buttons">
-            <a href="journal.html" class="btn">Journal de Rebut‑Sur‑Mer</a>
-            <a href="mairie.html" class="btn btn-secondary">Mairie</a>
-            <a href="carte.html" class="btn btn-secondary">Carte de la ville</a>
+<main id="top">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1 class="hero-title">Bienvenue à <strong>Rebut‑Sur‑Mer</strong></h1>
+        <p class="hero-sub">Ville de contrastes : marchés colorés le jour, mystères la nuit.</p>
+        <div class="hero-ctas">
+          <a href="#actualites" class="btn">Voir les actualités</a>
+          <a href="#services" class="btn btn-secondary">Nos services</a>
         </div>
-    </section>
+      </div>
+      <div class="hero-image" aria-hidden="true"></div>
+    </div>
+  </section>
 
-</main>
+  <section id="actualites" class="section container">
+    <h2>Actualités 📰</h2>
+    <p class="lede">Dernières nouvelles et éditoriaux de Rebut‑Sur‑Mer.</p>
+    <div class="grid">
+      <article class="card">
+        <h3>Une journée au marché</h3>
+        <p>Découvrez les étals et les commerçants qui rendent notre ville unique.</p>
+        <a href="journal.html" class="link">Voir le journal →</a>
+      </article>
+      <article class="card">
+        <h3>Zone industrielle</h3>
+        <p>Les enjeux environnementaux et l'avenir de nos quais.</p>
+        <a href="#decouvrir" class="link">En savoir plus →</a>
+      </article>
+      <article class="card">
+        <h3>La nuit à Rebut</h3>
+        <p>Reportage sur la vie nocturne et la sécurité dans les rues.</p>
+        <a href="#decouvrir" class="link">Lire →</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="services" class="section container">
+    <h2>Services & Liens utiles ⚙️</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Mairie</h3>
+        <p>Informations administratives et contacts.</p>
+        <a href="mairie.html" class="link">Accéder →</a>
+      </div>
+      <div class="card">
+        <h3>Carte de la ville</h3>
+        <p>Parcourez Rebut‑Sur‑Mer et ses quartiers.</p>
+        <a href="carte.html" class="link">Voir la carte →</a>
+      </div>
+      <div class="card">
+        <h3>Papiers & archives</h3>
+        <p>Accès aux journaux et aux numéros précédents.</p>
+        <a href="papers/p20260130.html" class="link">Lire →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="decouvrir" class="section container">
+    <h2>Découvrir Rebut‑Sur‑Mer</h2>
+    <p class="presentation">Oyez oyez braves Tropicitoyens, vous vous apprêtez à mettre les pieds dans une ville accueillante, aux commerçants joviaux, dont les échoppes regorgent de biens exotiques. Prenez le temps de vous promener dans nos rues paisibles, d'en apprécier les recoins et peut-être tomberez-vous sur un sympathique café, ou même sur Noigrumland.</p>
+    <p class="presentation">Après une longue journée à vous promener, vous observez le coucher de soleil depuis le rooftop du centre Pokémon, et en sirotant votre limonade, vous apercevez la fumée de la zone industrielle au loin, mise en évidence par le vermeil du crépuscule.</p>
+    <p class="presentation">La nuit tombée, la chaleur des rues de Rebut‑Sur‑Mer retombe, pour laisser place à une atmosphère plus sinistre. Que vous soyez un honnête citoyen ou un roublard effréné, rejoignez‑nous et embrassez cette ville aux multiples facettes !</p>
+  </section>
+
+  <section id="ville" class="section container">
+    <h2>La Ville 🏙️</h2>
+    <p class="lede">Présentation du conseil municipal, des champions d'arènes et des lieux forts du serveur Cobblemon.</p>
+    <div class="grid">
+      <article class="card">
+        <h3>Conseil municipal</h3>
+        <p>Rencontrez le conseil : joueurs, rôles et skins.</p>
+        <a href="conseil.html" class="link">Voir le conseil →</a>
+      </article>
+      <article class="card">
+        <h3>Champions d'arènes</h3>
+        <p>Les champions qui défendent nos arènes et leurs équipes.</p>
+        <a href="champions.html" class="link">Les champions →</a>
+      </article>
+      <article class="card">
+        <h3>Lieux forts</h3>
+        <p>Les incontournables : marchés, arènes, zones industrielles et lieux secrets.</p>
+        <a href="lieux.html" class="link">Découvrir →</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="section container small">
+    <h2>Contact</h2>
+    <p>Pour toute question, contactez la mairie ou consultez les pages dédiées via le menu.</p>
+    <a href="#top" class="link">Retour en haut ↑</a>
+  </section>
 
 </body>
 </html>

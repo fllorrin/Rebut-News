@@ -1,104 +1,118 @@
-/* ------------------------------
-   PAGE D'ACCUEIL AVEC IMAGE DE FOND
-   ------------------------------ */
+:root{
+  --bg:#0f1720;
+  --glass: rgba(255,255,255,0.06);
+  --accent:#4fd1c5;
+  --muted:#a8b3bd;
+  --card:#0b1220;
+}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color:#e7eef7;
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+/* Background image with subtle overlay */
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background-image:url("assets/images/rebut.png");
+  background-size:cover;background-position:center;
+  filter:brightness(0.35) blur(2px);
+  z-index:-2;
+}
+body::after{
+  content:"";position:fixed;inset:0;background:linear-gradient(180deg,rgba(3,7,18,0.45),rgba(3,7,18,0.6));z-index:-1;
+}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+/* Header / Nav */
+.site-header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(0,0,0,0.25),rgba(0,0,0,0.05));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;flex-direction:column}
+.logo{font-weight:700;color:#fff;text-decoration:none;font-size:1.1rem;letter-spacing:1px}
+.edition{margin:2px 0 0;color:var(--muted);font-size:0.8rem}
+.site-nav{display:flex;align-items:center}
+.nav-toggle{display:none;background:transparent;border:1px solid rgba(255,255,255,0.06);padding:6px 10px;border-radius:6px;color:var(--muted)}
+.nav-list{display:flex;gap:16px;list-style:none;margin:0;padding:0;align-items:center}
+.nav-list a{color:var(--muted);text-decoration:none;padding:6px 8px;border-radius:6px;transition:color 0.15s,background 0.15s}
+.nav-list a:hover{color:var(--accent);background:rgba(79,209,197,0.06)}
+.nav-list .btn.small{padding:6px 10px;font-size:0.9rem;border:1px solid rgba(255,255,255,0.06)}
+/* Hero */
+.hero{padding:60px 0}
+.hero-inner{display:flex;gap:30px;align-items:center}
+.hero-content{flex:1}
+.hero-title{font-size:clamp(1.8rem,4vw,3rem);margin:0 0 10px}
+.hero-sub{color:var(--muted);margin:0 0 18px}
+.hero-ctas{display:flex;gap:12px}
+.btn{display:inline-block;padding:10px 18px;background:var(--glass);color:#fff;text-decoration:none;border-radius:8px;border:1px solid rgba(255,255,255,0.06);transition:transform .12s ease,background .12s}
+.btn:hover{transform:translateY(-3px);background:rgba(255,255,255,0.08)}
+.btn-secondary{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+.hero-image{width:320px;height:200px;background:linear-gradient(135deg,#042d35,rgba(79,209,197,0.06));border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.6)}
+/* Sections */
+.section{padding:48px 0;border-top:1px solid rgba(255,255,255,0.02)}
+.section h2{margin:0 0 10px}
+.lede{color:var(--muted);margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 18px rgba(2,6,12,0.6)}
+.card h3{margin:0 0 8px}
+.card p{margin:0 0 12px;color:var(--muted);font-size:0.95rem}
+.link{color:var(--accent);text-decoration:none;font-weight:600}
+.presentation{color:#dfeaf3}
+.small{max-width:700px}
 
-body {
-    margin: 0;
-    font-family: "Georgia", serif;
-    color: #fff;
-    background: #000;
+/* Profile grid (conseil municipal) */
+.profile-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr); /* max 3 per row */
+  gap:18px;
+  margin-top:18px;
+  align-items:start;
+}
+.profile-card{
+  background:rgba(255,255,255,0.02);
+  padding:16px;
+  border-radius:12px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.03);
+  min-height:320px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.profile-card img{
+  width:100%;
+  height:auto;
+  max-height:240px;
+  object-fit:contain;
+  border-radius:8px;
+  margin:0 auto;
+}
+.profile-card h4{margin:6px 0 4px;font-size:1.05rem}
+.profile-card p{margin:0;color:var(--muted);font-size:0.95rem}
+
+/* Responsive for profile grid */
+@media (max-width:900px){
+  .profile-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:520px){
+  .profile-grid{grid-template-columns:repeat(1,1fr)}
+  .profile-card{min-height:auto}
+  .profile-card img{max-height:200px}
 }
 
-/* Image de fond */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: url("assets/images/rebut.png");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    filter: brightness(0.55) blur(2px);
-    z-index: -1;
+/* Footer */
+.site-footer{padding:20px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);text-align:center}
+/* Responsive */
+@media (max-width:800px){
+  .hero-inner{flex-direction:column}
+  .nav-toggle{display:inline-block}
+  .nav-list{position:fixed;right:12px;top:64px;background:rgba(2,6,12,0.9);padding:12px;border-radius:8px;flex-direction:column;display:none;min-width:160px}
+  .nav-list.open{display:flex}
+}
+@media (max-width:520px){
+  .hero-image{display:none}
+  .container{padding:0 16px}
 }
 
-/* HEADER */
-.home-header {
-    text-align: center;
-    padding: 40px 10px;
-    border-bottom: 4px solid rgba(255,255,255,0.4);
-    background: rgba(0,0,0,0.35);
-    backdrop-filter: blur(3px);
-}
-
-.title {
-    margin: 0;
-    font-size: 4rem;
-    letter-spacing: 4px;
-    color: #f1f1f1;
-}
-
-.edition {
-    margin-top: 5px;
-    font-style: italic;
-    color: #dcdcdc;
-}
-
-/* CONTENU */
-.home-container {
-    max-width: 900px;
-    margin: 60px auto;
-    text-align: center;
-    padding: 0 20px;
-    background: rgba(0,0,0,0.35);
-    border: 1px solid rgba(255,255,255,0.2);
-    backdrop-filter: blur(4px);
-    border-radius: 8px;
-}
-
-.home-intro h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    color: #fff;
-}
-
-.home-intro p {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    color: #e6e6e6;
-}
-
-/* BOUTONS */
-.home-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    border: 2px solid rgba(255,255,255,0.4);
-    border-radius: 6px;
-    transition: 0.2s;
-    backdrop-filter: blur(2px);
-}
-
-.btn:hover {
-    background: rgba(255,255,255,0.35);
-    color: #000;
-}
-
-.btn-secondary {
-    background: rgba(255,255,255,0.1);
-}
-
-.btn-secondary:hover {
-    background: rgba(255,255,255,0.35);
-    color: #000;
-}
