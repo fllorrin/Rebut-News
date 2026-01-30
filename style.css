@@ -92,14 +92,23 @@ body::after{
 .profile-card h4{margin:6px 0 4px;font-size:1.05rem}
 .profile-card p{margin:0;color:var(--muted);font-size:0.95rem}
 
-/* Responsive for profile grid */
+/* Champions grid */
+.champion-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.champion-card{background:rgba(255,255,255,0.02);padding:14px;border-radius:12px;position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;min-height:320px;border:1px solid rgba(255,255,255,0.03)}
+.champion-card .champion-skin{width:100%;height:auto;max-height:220px;object-fit:contain;border-radius:8px}
+.champion-card .badge{position:absolute;top:12px;right:12px;width:48px;height:48px}
+.champion-card h3{margin:8px 0 4px}
+.champion-type{color:var(--muted);font-weight:600;margin-bottom:6px}
+
+/* Responsive for profile & champion grid */
 @media (max-width:900px){
-  .profile-grid{grid-template-columns:repeat(2,1fr)}
+  .profile-grid,.champion-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:520px){
-  .profile-grid{grid-template-columns:repeat(1,1fr)}
-  .profile-card{min-height:auto}
+  .profile-grid,.champion-grid{grid-template-columns:repeat(1,1fr)}
+  .profile-card,.champion-card{min-height:auto}
   .profile-card img{max-height:200px}
+  .champion-card .champion-skin{max-height:200px}
 }
 
 /* Footer */

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archives du Journal — Rebut‑Sur‑Mer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <a href="index.html" class="logo">REBUT‑SUR‑MER</a>
+      <p class="edition">Archives du Journal</p>
+    </div>
+  </div>
+</header>
+<main class="container section">
+  <h1>Toutes les parutions</h1>
+  <p class="lede">Liste des numéros disponibles. Cliquez pour lire l'édition complète.</p>
+
+  <div id="issues" class="grid issues-list" aria-live="polite">
+    <!-- Chargement dynamique des parutions -->
+    <div class="card">Chargement...</div>
+  </div>
+  <script src="scripts/loadPapers.js" defer></script>
+
+  <p class="presentation">Pour ajouter une nouvelle parution : créez un fichier dans le dossier <code>papers/</code> et ajoutez son entrée ici (ou je peux automatiser la génération si vous le souhaitez).</p>
+  <p><a href="index.html" class="link">← Retour à l'accueil</a></p>
+</main>
+<footer class="site-footer">
+  <div class="container"><small>© Rebut‑Sur‑Mer</small></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
