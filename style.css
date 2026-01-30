@@ -1,38 +1,71 @@
 /* ------------------------------
-   PAGE D'ACCUEIL REBUT-SUR-MER
+   PAGE D'ACCUEIL AVEC IMAGE DE FOND
    ------------------------------ */
 
+body {
+    margin: 0;
+    font-family: "Georgia", serif;
+    color: #fff;
+    background: #000;
+}
+
+/* Image de fond */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("assets/images/rebut.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(0.55) blur(2px);
+    z-index: -1;
+}
+
+/* HEADER */
 .home-header {
-    border-bottom: 6px double #2b2b2b;
-    background: #dfe6e9;
+    text-align: center;
+    padding: 40px 10px;
+    border-bottom: 4px solid rgba(255,255,255,0.4);
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(3px);
 }
 
 .title {
-    font-family: "Georgia", serif;
+    margin: 0;
+    font-size: 4rem;
     letter-spacing: 4px;
+    color: #f1f1f1;
 }
 
 .edition {
-    color: #444;
+    margin-top: 5px;
     font-style: italic;
+    color: #dcdcdc;
 }
 
+/* CONTENU */
 .home-container {
     max-width: 900px;
     margin: 60px auto;
     text-align: center;
     padding: 0 20px;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
 }
 
 .home-intro h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 .home-intro p {
     font-size: 1.2rem;
     margin-bottom: 40px;
-    color: #333;
+    color: #e6e6e6;
 }
 
 /* BOUTONS */
@@ -46,25 +79,26 @@
 .btn {
     display: inline-block;
     padding: 12px 25px;
-    background: #2d3436;
+    background: rgba(255,255,255,0.15);
     color: #fff;
     text-decoration: none;
     font-size: 1.1rem;
-    border: 2px solid #2d3436;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 6px;
     transition: 0.2s;
+    backdrop-filter: blur(2px);
 }
 
 .btn:hover {
-    background: #fff;
-    color: #2d3436;
+    background: rgba(255,255,255,0.35);
+    color: #000;
 }
 
 .btn-secondary {
-    background: #636e72;
-    border-color: #636e72;
+    background: rgba(255,255,255,0.1);
 }
 
 .btn-secondary:hover {
-    background: #fff;
-    color: #636e72;
+    background: rgba(255,255,255,0.35);
+    color: #000;
 }
